@@ -1,0 +1,44 @@
+.taskCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2d2d2d;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.taskLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.taskText {
+  font-size: 1rem;
+  color: white;
+  word-break: break-word;
+}
+
+.taskText.done {
+  text-decoration: line-through;
+  color: #a1a1a1;
+}
+
+.deleteButton {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  font-size: 0.875rem;
+}
+
+.deleteButton:hover {
+  background-color: #b91c1c;
+}

@@ -1,5 +1,5 @@
 import type { Task } from "../types/task"
-
+import styles from "../styles/TaskItem.module.css"
 
 interface Props {
   task: Task
@@ -7,20 +7,22 @@ interface Props {
   onDelete: (id: string) => void
 }
 
-export function TaskItem({ task, onToggle, onDelete }: Props) {
+export function TaskItem({ task, onToggle, onDelete }: Props) 
+{
   return (
-    <div className="flex justify-between items-center mb-2">
-      <label className="flex items-center gap-2">
+    <div className={styles.taskCard}>
+      <div className={styles.taskLeft}>
         <input
           type="checkbox"
           checked={task.completed}
           onChange={() => onToggle(task.id)}
+          className="h-5 w-5 accent-blue-600"
         />
-        <span className={task.completed ? "line-through text-gray-500" : ""}>
+        <span className={`${styles.taskText} ${task.completed ? styles.done : ""}`}>
           {task.title}
         </span>
-      </label>
-      <button onClick={() => onDelete(task.id)} className="text-red-600 hover:underline">
+      </div>
+      <button className={styles.deleteButton} onClick={() => onDelete(task.id)}>
         Delete
       </button>
     </div>

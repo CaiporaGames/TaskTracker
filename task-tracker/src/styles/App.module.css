@@ -1,0 +1,60 @@
+.appContainer {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: #181818;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: white;
+}
+
+.cardWrapper {
+  width: 100%;
+  max-width: 600px;
+  background-color: #222;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.inputRow {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.taskInput {
+  flex-grow: 1;
+  padding: 10px 14px;
+  background-color: #333;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.addButton {
+  background-color: #22c55e; /* Tailwind's green-500 */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.addButton:hover {
+  background-color: #15803d; /* Tailwind's green-700 */
+}

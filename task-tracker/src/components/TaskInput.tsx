@@ -1,31 +1,33 @@
-import { useState } from "react"
-import type { FormEvent } from "react"
+import { useState, type FormEvent } from "react";
+import styles from "../styles/App.module.css"; // Reuse same CSS module
 
 interface Props {
-  onAdd: (title: string) => void
+  onAdd: (title: string) => void;
 }
 
-export function TaskInput({ onAdd }: Props) {
-  const [title, setTitle] = useState("")
+export function TaskInput({ onAdd }: Props) 
+{
+  const [title, setTitle] = useState("");
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault()
-    if (!title.trim()) return
-    onAdd(title)
-    setTitle("")
-  }
+  const handleSubmit = (e: FormEvent) => 
+{
+    e.preventDefault();
+    if (!title.trim()) return;
+    onAdd(title);
+    setTitle("");
+  };
 
   return (
-    <form onSubmit={handleSubmit} className="flex gap-2 mb-4">
+    <form onSubmit={handleSubmit} className={styles.inputRow}>
       <input
-        className="border rounded px-3 py-2 flex-grow"
+        className={styles.taskInput}
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Add a task..."
       />
-      <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">
+      <button type="submit" className={styles.addButton}>
         Add
       </button>
     </form>
-  )
+  );
 }

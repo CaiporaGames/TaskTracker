@@ -7,7 +7,8 @@ interface Props {
   onDelete: (id: string) => void
 }
 
-export function TaskList({ tasks, onToggle, onDelete }: Props) {
+export function TaskList({ tasks, onToggle, onDelete }: Props) 
+{
   return (
     <div>
       {tasks.length === 0 && <p className="text-gray-400">No tasks yet.</p>}
